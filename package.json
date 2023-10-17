@@ -1,8 +1,7 @@
 {
-	"name": "sourcechart",
+	"name": "excalichart",
 	"version": "0.3.5",
-	"license": "internal",
-	"private": true,
+	"license": "LGPL-3.0-only",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
