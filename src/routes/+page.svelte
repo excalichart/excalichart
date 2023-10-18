@@ -21,7 +21,8 @@
 		<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 space-x-4">
 			<!-- Logo on the left -->
 			<a href="/" class="flex items-center space-x-2">
-				<img src="/logo1.png" class="w-48" alt="Logo" />
+				<img src="/logo.png" class="w-20" alt="Logo" />
+				<span class="font-bold text-xl text-purple-700">Excalichart</span>
 			</a>
 
 			<!-- Navigation Links -->
@@ -272,7 +273,8 @@
 		<div class="md:flex md:justify-between">
 			<div class="mb-6 md:mb-0">
 				<a href="/" class="flex items-center space-x-2">
-					<img src="/logo1.png" class="w-60" alt="Logo" />
+					<img src="/logo.png" class="w-20" alt="Logo" />
+					<span class="font-bold text-xl text-purple-700">Excalichart</span>
 				</a>
 			</div>
 
