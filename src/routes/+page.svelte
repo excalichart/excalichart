@@ -13,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>SourceChart</title>
+	<title>Excalichart: Charts in your browser</title>
 	<meta name="description" content="Landing page for sourcechart" />
 </svelte:head>
 <header class="mb-12">
