@@ -1,6 +1,6 @@
 # ExcaliChart
 
-![ExcaliChart Logo](logo.png)  <!-- Replace 'link-to-logo.png' with actual logo link if you have one -->
+![ExcaliChart Logo](static/logo.png)  <!-- Replace 'link-to-logo.png' with actual logo link if you have one -->
 
 ExcaliChart is a robust whiteboard solution designed specifically for visualizing larger datasets with ease. Create intricate charts, graphics, and images with an intuitive interface and get insights from your data faster than ever before.
 
