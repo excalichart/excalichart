@@ -1,50 +1,33 @@
-# Silvia
+# ExcaliChart
 
-Our mission is to create high performance dashboards inside of your browser.
+![ExcaliChart Logo](logo.png)  <!-- Replace 'link-to-logo.png' with actual logo link if you have one -->
 
-## Getting started.
+ExcaliChart is a robust whiteboard solution designed specifically for visualizing larger datasets with ease. Create intricate charts, graphics, and images with an intuitive interface and get insights from your data faster than ever before.
 
-### If you are on a mac and don't have node installed.
-First thing to do is to install nvm
-```
-brew uninstall --ignore-dependencies node 
-brew uninstall --force node 
-brew update 
-brew install nvm 
-mkdir ~/.nvm 
-vim ~/.bash_profile 
-```
+---
 
-COPY AND PASTE these two lines into your terminal text editor.
-```
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-```
+## 🌟 Features
+- **Data-Driven Visualization:** Seamlessly import large datasets and convert them into visual masterpieces.
+- **Intuitive Whiteboard Interface:** Designed with simplicity in mind, making data visualization a breeze.
+- **Diverse Chart Options:** From bar graphs to scatter plots, we've got you covered.
 
-Next to save the script press
-```
-ESC + :wq 
+---
 
-```
+## 🚀 Getting Started
 
-Then copy and paste this command into your terminal
-```
-source ~/.bash_profile
-```
+### Prerequisites
+- Ensure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-### Getting githubcli up and running
-```
-brew install gh
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/excalichart/excalichart.git
 
-```
+# Navigate to the project directory
+cd excalichart
 
-## Running the package
-```
-nvm install node 
-nvm install 18
-gh repo clone tc-cole/silvia ./silvia
-cd ./silvia
-npm update
-npm run dev
+# Install dependencies
+npm install
 
-```
+# Start the local development server
+npm start
