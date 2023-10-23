@@ -4,6 +4,7 @@
 	import XColumnDropdown from './sidebar-components/XColumnDropdown.svelte';
 	import YColumnDropdown from './sidebar-components/YColumnDropdown.svelte';
 	import Groupby from './sidebar-components/Groupby.svelte';
+	import Limit from './sidebar-components/Limit.svelte';
 	import ChartDropdown from './sidebar-components/ChartDropdown.svelte';
 	import AddFilter from './sidebar-components/AddFilter.svelte';
 	import ExportToCSV from './sidebar-components/ExportToCSV.svelte';
@@ -109,6 +110,14 @@
 								<Filter {filterData} />
 							</div>
 						{/each}
+					</div>
+
+					<!--Limit-->
+					<div class="py-4 px-3 hover:bg-[#303030] hover:round-md">
+						<div class="flex justify-between items-center w-full">
+							<span class="text-sm font-light text-neutral-300">Limit</span>
+							<Limit />
+						</div>
 					</div>
 
 					<!--Analysis-->

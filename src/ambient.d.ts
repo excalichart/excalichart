@@ -34,6 +34,7 @@ type Chart = {
 	filterColumns: Array<any>;
 	xColumn: string | null;
 	yColumn: string | null;
+	limit: number;
 
 	//chartShape: string;
 
@@ -88,6 +89,7 @@ type Queries = {
 			groupbyColumns: string[];
 			filterColumns: any[];
 			legendKey: string | null;
+			limit: number | null;
 		};
 		cluster: {
 			attributes: string[];

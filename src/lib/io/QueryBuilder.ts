@@ -1,7 +1,6 @@
 import { checkNameForSpacesAndHyphens } from './FileUtils';
 
 export class Query {
-	// Builder Class for constructing DuckDB Queries. If you want to add a feature, add a new method and call it in new Query(queryObject).build
 	queryObject: QueryObject;
 	workFlow: WorkFlow;
 
@@ -46,6 +45,7 @@ export class Query {
 	private getBasicQuery() {
 		let yColumn = this.checkSelectBlock().yColumn;
 
+		var limit = this.queryObject.queries.select.basic.limit;
 		var groupby = this.constructGroupBy();
 		var aggregator = this.queryObject.queries.select.basic.yColumn.aggregator;
 		var groupbyColumns = this.queryObject.queries.select.basic.groupbyColumns;
@@ -70,7 +70,7 @@ export class Query {
 		//@ts-ignore
 		const columns = this.getAllColumns(yColumn);
 		var selectQuery = this.constructSelect(columns.join(', '), this.checkSelectBlock().file);
-		var queryParts = [selectQuery, groupby, filters];
+		var queryParts = [selectQuery, groupby, filters, `LIMIT ${limit}`];
 		var queryString = queryParts.join(' ');
 		return queryString;
 	}

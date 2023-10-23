@@ -15,6 +15,7 @@ const addChartMetaData = (id: string): void => {
 		filterColumns: [],
 		xColumn: null,
 		yColumn: null,
+		limit: 5000,
 		/*
 		Maybe I should seperate this out to a different store.
 		
