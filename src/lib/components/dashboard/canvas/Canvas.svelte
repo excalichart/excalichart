@@ -164,6 +164,7 @@
 			responsiveType === 'mouse' &&
 			$touchType === 'default'
 		) {
+			mostRecentChartID.set(null);
 			activeSidebar.set(false);
 		}
 	}

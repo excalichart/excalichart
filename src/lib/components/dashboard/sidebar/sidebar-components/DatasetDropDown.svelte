@@ -25,6 +25,12 @@
 	let selectedDataset: string | null = '';
 	let dropdownContainer: HTMLElement;
 
+	let disabledClick: boolean = false;
+
+	const handleDisabledClick = () => {
+		disabledClick = !disabledClick;
+	};
+
 	$: file = getFileFromStore();
 	$: i = clickedChartIndex();
 	$: datasets = fileDropdown();
@@ -159,15 +165,15 @@
 	};
 
 	const toggleDropdown = () => {
-		isDropdownOpen = !isDropdownOpen;
+		// Check if the button is "disabled" before proceeding
+		if ($mostRecentChartID && $polygons.length > 0) {
+			isDropdownOpen = !isDropdownOpen;
+		} else {
+			// Handle the "disabled" button click here, if needed
+			alert('The button is disabled!');
+		}
 	};
-
-	let tooltipText = '';
-
-	//$: console.log($polygons);
-	$: if ($polygons.length === 0) {
-		tooltipText = '';
-	}
+	$: console.log($mostRecentChartID);
 </script>
 
 <div class="py-1 flex w-full space-x-1 items-center justify-between">
@@ -187,11 +193,13 @@
 			</span>
 			<CarrotDown class=" hover:text-neutral-400 " />
 		</button>
-		{#if $polygons.length === 0}
+		{#if !$mostRecentChartID || $polygons.length === 0}
 			<div
-				class="absolute left-0 -mt-24 w-44 text-sm bg-white text-neutral-800 p-2 rounded-md shadow-lg tooltip"
+				class="absolute left-0 -mt-24 w-44 text-sm bg-white text-neutral-800 p-2 rounded-md shadow-lg tooltip flex"
 			>
-				No polygons detected. Please create a chart by pressing <Rectangle /> and dragging on the Canvas.
+				<span>
+					No polygons detected. Please create a chart by pressing <Rectangle /> and dragging on the Canvas.
+				</span>
 			</div>
 		{/if}
 

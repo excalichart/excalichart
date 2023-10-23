@@ -1,27 +1,29 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { allCharts, clickedChartIndex } from '$lib/io/Stores';
+	import { onMount } from 'svelte';
 	let number: number | undefined;
-
-	// Assuming clickedChartIndex is a store
 	$: i = clickedChartIndex();
-	//let i: number = $clickedChartIndex;
 
 	onMount(() => {
-		if ($allCharts[$i] && typeof $allCharts[$i].limit !== 'undefined') {
+		if ($allCharts[$i]?.limit) {
 			number = $allCharts[$i].limit;
 		}
 	});
-
-	$: {
-		if (typeof number !== 'undefined') {
-			$allCharts[$i].limit = number;
-		}
-	}
 </script>
 
 <input
 	type="number"
+	min="0"
 	bind:value={number}
+	on:input={() => {
+		if (
+			$allCharts &&
+			$allCharts[$i] &&
+			typeof number === 'number' &&
+			$allCharts[$i].limit !== number
+		) {
+			$allCharts[$i].limit = number;
+		}
+	}}
 	class="text-black w-24 mt-3 h-6 justify-between items-between"
 />
