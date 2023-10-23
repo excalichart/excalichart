@@ -38,6 +38,7 @@
 			return;
 		}
 		//@ts-ignore
+		console.log('');
 		const existingFilter = $allCharts[$i].filterColumns.find((filter) => filter.column === column); //@ts-ignore
 		const nullFilter = $allCharts[$i].filterColumns.find((filter) => filter.column === null);
 
@@ -66,8 +67,6 @@
 				}
 			];
 		}
-
-		allCharts.set($allCharts);
 	}
 
 	function draggable(node: HTMLElement) {
@@ -96,7 +95,6 @@
 		}
 
 		function handleMousemove(event: MouseEvent | TouchEvent) {
-			console.log('drag move');
 			if (!dragging) return; // If not dragging, exit the function
 
 			if (event.type === 'touchmove') {

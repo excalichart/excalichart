@@ -27,7 +27,8 @@ class DataIO {
 						from: chart?.filename,
 						groupbyColumns: [...(chart?.groupbyColumns ? chart.groupbyColumns : [])],
 						filterColumns: [...(chart?.filterColumns ? chart.filterColumns : [])],
-						legendKey: chart?.legendKey
+						legendKey: chart?.legendKey,
+						limit: chart?.limit
 					},
 					cluster: {
 						attributes: [...(chart?.groupbyColumns ? chart.groupbyColumns : [])],

@@ -17,6 +17,7 @@
 	import { values } from 'idb-keyval';
 	import FileUploadButton from '../sidebar-components/FileUploadButton.svelte';
 	import CloseSolid from '$lib/components/ui/icons/CloseSolid.svelte';
+	import Rectangle from '$lib/components/ui/icons/Rectangle.svelte';
 	import CarrotDown from '$lib/components/ui/icons/CarrotDown.svelte';
 	import { addChartMetaData } from '$lib/io/ChartMetaDataManagement';
 
@@ -163,10 +164,9 @@
 
 	let tooltipText = '';
 
-	$: if (!$mostRecentChartID) {
-		tooltipText = 'Please create a chart first.';
-	} else if ($polygons.length === 0) {
-		tooltipText = 'No polygons detected. Please add some rectangles to proceed.';
+	//$: console.log($polygons);
+	$: if ($polygons.length === 0) {
+		tooltipText = '';
 	}
 </script>
 
@@ -187,12 +187,13 @@
 			</span>
 			<CarrotDown class=" hover:text-neutral-400 " />
 		</button>
-		<div
-			class="absolute left-0 mt-1 w-44 text-xs bg-neutral-800 text-neutral-200 p-2 rounded-md shadow-lg tooltip"
-			style="visibility: hidden;"
-		>
-			{tooltipText}
-		</div>
+		{#if $polygons.length === 0}
+			<div
+				class="absolute left-0 -mt-24 w-44 text-sm bg-white text-neutral-800 p-2 rounded-md shadow-lg tooltip"
+			>
+				No polygons detected. Please create a chart by pressing <Rectangle /> and dragging on the Canvas.
+			</div>
+		{/if}
 
 		{#if isDropdownOpen}
 			<div
